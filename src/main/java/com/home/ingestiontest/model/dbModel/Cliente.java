@@ -3,9 +3,9 @@ package com.home.ingestiontest.model.dbModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 @Entity
 @Getter
@@ -14,9 +14,9 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    String nombre;
-    String apellido1;
-    String apellido2;
-    String telefono;
-    String email;
+    private String nombre;
+    private String apellido1;
+    private String apellido2;
+    private String telefono;
+    private String email;
 }
