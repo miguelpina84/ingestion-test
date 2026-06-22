@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,4 +21,10 @@ public class ClienteM {
     private String apellido2;
     private String telefono;
     private String email;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<ZapatoM> zapatos;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<VehiculoM> vehiculos;
 }

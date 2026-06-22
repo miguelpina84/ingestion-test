@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,4 +20,8 @@ public class VehiculoM {
     private String color;
     private Integer anio;
     private Long km;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private ClienteM cliente;
 }

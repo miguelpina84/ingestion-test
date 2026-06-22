@@ -1,24 +1,27 @@
 package com.home.ingestiontest.model.dbModel;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Entity
-@Setter
 @Getter
-@ToString
-@RequiredArgsConstructor
-public class ZapatoM  {
-
+@Setter
+public class ZapatoM {
     @Id
-    private Long id1;
-    Long id;
-    String marca;
-    String modelo;
-    Integer talla;
-    String color;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String marca;
+    private String modelo;
+    private Integer talla;
+    private Double precio;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private ClienteM cliente;
 }
