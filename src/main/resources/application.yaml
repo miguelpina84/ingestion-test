@@ -9,4 +9,10 @@ spring:
     hikari:
       max-lifetime: 120000
       connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
+server:
+  port: 8081
